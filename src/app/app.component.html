@@ -88,3 +88,28 @@
     <h1>Este es un mensaje con ngIf</h1>
   </ng-container>
 </div>
+
+<div>
+  <p [ngClass]="'myClass'">
+    Estilo con cadenas
+  </p>
+  <p [ngClass]="['myClass', 'myClassGlobal']">
+    Estilo multiple desde ngClass
+  </p>
+  <p [ngClass]="myClass">Prueba 2</p>
+
+  <p [ngStyle]="{'width': withExample}">Prueba 3
+  </p>
+</div>
+
+<div >
+  <div *ngFor="let book of books" [ngClass]="'myBook'" [ngStyle] = "{width: '200px'}"> 
+    <img [src]="book.image" [width]="80">
+    <h4> {{ book.name }} </h4>
+    <p> {{ book.publisher }} <br>
+        {{ book.publishedDate }}
+    </p>
+  </div>
+
+  <app-book-example *ngFor="let book of books" [book]="book" [ngClass]="'myBook'"></app-book-example>
+ </div>
