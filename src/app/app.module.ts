@@ -9,6 +9,7 @@ import { BookExampleComponent } from './components/book-example/book-example.com
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BookListExampleComponent } from './components/book-list-example/book-list-example.component';
 import { BookSelectCountComponent } from './components/book-select-count/book-select-count.component';
+import { BookSelectCountGroupComponent } from './components/book-select-count-group/book-select-count-group.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { BookSelectCountComponent } from './components/book-select-count/book-se
     HomePageComponent,
     BookListExampleComponent,
     BookSelectCountComponent,
+    BookSelectCountGroupComponent,
   ],
   imports: [
     BrowserModule,

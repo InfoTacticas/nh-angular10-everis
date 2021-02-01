@@ -7,3 +7,9 @@ export interface IBook {
   publishedDate: string;
   publisher: string;
 }
+
+export interface IBookAgrupado {
+  id: number;
+  name: string;
+  cantidad: number;
+}

@@ -1,0 +1,16 @@
+:host {
+    /*background-color: rgb(105, 238, 255);*/
+    display: table;
+    padding-left: 5px;
+  }
+  
+  .selectedPorLibro{
+    background-color: rgb(240, 231, 235);
+    padding: 10px;  
+    display: block;
+    width: 250px;
+  }
+  
+  p{
+    margin: 2px;
+  }

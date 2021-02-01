@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-book-select-count',
   templateUrl: './book-select-count.component.html',
@@ -8,10 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BookSelectCountComponent implements OnInit {
 
   @Input() totalBooks: number;
+  
   constructor() { }
 
   ngOnInit(): void {
     this.totalBooks = 0;
+    
   }
 
 }

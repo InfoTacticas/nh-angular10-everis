@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IBook } from '../book';
+import { IBook, IBookAgrupado } from '../book';
 import { BookData } from './mock-data';
 
 @Component({
@@ -11,11 +11,14 @@ export class BookListExampleComponent implements OnInit {
 
   books: IBook[];
   selectedBooks: IBook[];
+  selectedBooksAgrupados: IBookAgrupado[];
+     
   constructor() { }
 
   ngOnInit(): void {
     this.books = this.fetchBook();
     this.selectedBooks = [];
+    this.selectedBooksAgrupados = [];
   }
 
   fetchBook(): IBook[] {
@@ -24,6 +27,27 @@ export class BookListExampleComponent implements OnInit {
 
   selectBook(book: IBook): void {
     this.selectedBooks.push(book);
+
+    
+    let encontrado = false;
+    for(var item of this.selectedBooksAgrupados){
+      if(book.name == item.name)
+      {
+        item.cantidad =  item.cantidad + 1;
+        encontrado = true;
+        break;
+      }
+    }
+    if(encontrado == false){
+      this.selectedBooksAgrupados.push( {"id": book.id, "name": book.name, "cantidad": 1} );
+    }
+    console.log(this.selectedBooksAgrupados);
+    
+  }
+
+  obtenerTotalSeleccionados(): number{
+    return this.selectedBooks.length;
+    
   }
 
 }
