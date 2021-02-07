@@ -10,6 +10,12 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BookListExampleComponent } from './components/book-list-example/book-list-example.component';
 import { BookSelectCountComponent } from './components/book-select-count/book-select-count.component';
 
+import { CustomNamePipe } from './components/book-example/book-name.pipe';
+import { PublisherPrettyPipe } from './components/book-example/publisher-pretty.pipe';
+import { ExamplePageComponent } from './pages/example-page/example-page.component';
+import { BookTopExampleDirective } from './components/book-example/book-top-example.directive';
+import { SuscriptionFormComponent } from './components/suscription-form/suscription-form.component';
+
 
 @NgModule({
   declarations: [
@@ -19,11 +25,18 @@ import { BookSelectCountComponent } from './components/book-select-count/book-se
     HomePageComponent,
     BookListExampleComponent,
     BookSelectCountComponent,
+    CustomNamePipe,
+    PublisherPrettyPipe,
+    ExamplePageComponent,
+    BookTopExampleDirective,
+    SuscriptionFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

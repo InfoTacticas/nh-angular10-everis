@@ -7,7 +7,7 @@ import { IBook } from '../book';
   styleUrls: ['./book-example.component.css']
 })
 export class BookExampleComponent {
-  @Input() book;
+  @Input() book : IBook;
   @Output() clickBook: EventEmitter<IBook>;
   constructor() {
     this.clickBook = new EventEmitter();

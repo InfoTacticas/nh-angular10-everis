@@ -1,5 +1,6 @@
 <div>
   <app-book-select-count [totalBooks]="selectedBooks.length"></app-book-select-count>
-  <app-book-example *ngFor="let book of books" [book]="book" (clickBook)="selectBook( $event )"></app-book-example>
+  <app-book-example *ngFor="let book of books" [book]="book" (clickBook)="selectBook( $event )" [appBookTopExample] = "book.isTop">    
+  </app-book-example>
 </div>
 

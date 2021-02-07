@@ -6,4 +6,5 @@ export interface IBook {
   language: 'es' | 'en';
   publishedDate: string;
   publisher: string;
+  isTop: boolean;
 }

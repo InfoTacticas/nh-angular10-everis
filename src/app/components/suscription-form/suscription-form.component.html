@@ -1,0 +1,50 @@
+<form #suscriptionForm="ngForm" (ngSubmit)="onSubmit(suscriptionForm);">
+    <p>
+        <label for="fullname">
+        Nombres</label>
+        <input type="text" name="fullname" #fullname="ngModel" ngModel required>  
+        <span class="error" *ngIf="fullname.invalid && (fullname.touched || fullname.dirty) "> 
+            ERROR
+            {{ fullname.errors | json }}
+            <ng-container *ngIf="fullname.errors.required">
+                El campo es obligatorio
+            </ng-container>
+        </span>          
+    </p>
+    <p>
+        <label for="email">
+        Email</label>
+        <input type="text" name="email" 
+        #email="ngModel" ngModel>     
+    </p>
+    <div ngmodelGroup="address">
+    <p>
+        <label for="city">
+        Ciudad</label>
+        <input type="text" name="city" 
+        #city="ngModel" ngModel>     
+    </p>
+    <p>
+        <label for="zipcode">
+        Codigo Postal</label>
+        <input type="text" name="zipcode" 
+        #zipcode="ngModel" ngModel>     
+    </p>
+    <p>
+        <label for="street">
+        Calle</label>
+        <input type="text" name="street" 
+        #street="ngModel" ngModel>     
+    </p>
+</div>
+    <button type="submit"  [disabled]="!suscriptionForm.valid">Enviar</button>
+</form>>
+
+<pre>
+    {{ suscriptionForm.value | json }}
+    {{ suscriptionForm.valid | json }}
+    valid: {{ fullname.valid }}
+    invalid:{{ fullname.valid }}
+    touched: {{ fullname.touched }}
+    dirty: {{ fullname.dirty }}
+</pre>
