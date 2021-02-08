@@ -1,0 +1,42 @@
+<h3>Rective Form con FormGroup</h3>
+
+<form [formGroup]="reserveForm">
+    <p>
+        <label>Nombre</label>
+        <input type="text" formControlName="firstName">
+    </p>
+    <p>
+        <label>Apellido</label>
+        <input type="text" formControlName="lastName">
+    </p>
+    <p>
+        <label>Email</label>
+        <input type="text" formControlName="email">
+    </p>
+
+    <p>
+        <label>Confirmar Email</label>
+        <input type="text" formControlName="reemail">
+    </p>
+
+    <p>
+        <label>Código del Libro</label>
+        <input type="text" formControlName="isbn">
+    </p>
+
+    <button>Reservar</button>
+</form>
+
+
+<pre>
+    FirstName valido : {{ reserveForm.get('firstName').valid }}
+
+    FirstName valido v2 : {{ firstName.valid }}
+
+    FirstName valido v3: {{ f.firstName.valid }}
+
+</pre>
+<pre>
+    {{ reserveForm.hasError('notMatch') }}
+    {{ f.isbn.hasError('notExists') }}
+</pre>

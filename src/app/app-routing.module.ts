@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ExamplePageComponent
   },
   {
-    path: 'template-form',
+    path: 'example/forms',
     component: TemplateFormPageComponent
   }
 ];

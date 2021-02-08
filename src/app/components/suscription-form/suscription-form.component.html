@@ -1,7 +1,10 @@
+<h3>Formularios basados en Template</h3>
+
 <form #suscriptionForm="ngForm" (ngSubmit)="onSubmit(suscriptionForm);">
   <p>
     <label for="fullname">Nombres</label>
-    <input type="text" name="fullname" #fullname="ngModel" ngModel required>
+    <input type="text" name="fullname" #fullname="ngModel" [(ngModel)] = "model.fullname" required>
+    <span>{{  fullname.value }}</span>
     <span class="error" *ngIf="fullname.invalid && (fullname.touched || fullname.dirty)">
       <ng-container *ngIf="fullname.errors.required">
         El campo es obligatorio
@@ -10,27 +13,36 @@
   </p>
   <p>
     <label for="email">Email</label>
-    <input type="email" name="email" #email="ngModel" ngModel>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="model.email">
   </p>
   <div ngModelGroup="address">
     <p>
       <label for="city">Ciudad</label>
-      <input type="text" name="city" #city="ngModel" ngModel>
+      <input type="text" name="city" #city="ngModel" [(ngModel)]="model.address.city">
     </p>
     <p>
       <label for="zipcode">Codigo Postar</label>
-      <input type="text" name="zipcode" #zipcode="ngModel" ngModel>
+      <input type="text" name="zipcode" #zipcode="ngModel" [(ngModel)]="model.address.zipcode">
     </p>
     <p>
       <label for="street">Calle</label>
-      <input type="text" name="street" #street="ngModel" ngModel>
+      <input type="text" name="street" #street="ngModel" [(ngModel)]="model.address.street">
     </p>
   </div>
-  <button type="submit" [disabled]="!suscriptionForm.valid">Enviar</button>
+  <!-- <button type="submit" [disabled]="!suscriptionForm.valid">Enviar</button> -->
+  <button type="submit" [disabled]="suscriptionForm.invalid && (suscriptionForm.touched || suscriptionForm.dirty)">Enviar</button>
+
 </form>
 <pre>
   {{ suscriptionForm.value | json }}
   {{ suscriptionForm.valid | json }}
+
+  valid form: {{ suscriptionForm.valid}}
+  invalid form: {{ suscriptionForm.invalid}}
+
+  touched: {{ suscriptionForm.touched}}
+  dirty: {{ suscriptionForm.dirty}}
+
   valid: {{ fullname.valid }}
   invalid: {{ fullname.invalid }}
   touched: {{ fullname.touched }}
