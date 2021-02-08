@@ -1,0 +1,15 @@
+<ng-container *ngIf="control">
+    <span *ngIf="control.invalid && (control.touched || control.dirty)">
+        <ng-container *ngIf="control.hasError('required')">
+            El campo es obligatorio
+        </ng-container>
+        <ng-container *ngIf="control.hasError('email')">
+            No es un email válido
+        </ng-container>
+        <ng-container *ngIf="control.hasError('pattern')">
+            Solo se aceptan emails institucionales
+        </ng-container>
+    
+    </span>    
+    
+</ng-container>

@@ -18,6 +18,8 @@ import { SuscriptionFormComponent } from './components/suscription-form/suscript
 import { TemplateFormPageComponent } from './pages/template-form-page/template-form-page.component';
 import { SuscriptionInlineFormComponent } from './components/suscription-inline-form/suscription-inline-form.component';
 import { ReserveBookFormComponent } from './components/reserve-book-form/reserve-book-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { MessageErrorComponent } from './components/register-form/message-error/message-error.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ReserveBookFormComponent } from './components/reserve-book-form/reserve
     TemplateFormPageComponent,
     SuscriptionInlineFormComponent,
     ReserveBookFormComponent,
+    RegisterFormComponent,
+    MessageErrorComponent,
   ],
   imports: [
     BrowserModule,
