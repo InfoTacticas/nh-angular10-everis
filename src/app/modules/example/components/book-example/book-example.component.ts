@@ -14,7 +14,7 @@ export class BookExampleComponent {
   }
 
   onClickBook(): void {
-    console.log("click en el libro: ", this.book.name);
+    console.log('click en el libro: ', this.book.name);
     this.clickBook.emit(this.book);
   }
 }

@@ -26,7 +26,7 @@ export class SuscriptionFormComponent implements OnInit {
         zipcode: 'Lima 25',
         street: 'Jesus maria'
       }
-    )
+    );
   }
 
   onSubmit(suscriptionForm: NgForm) {

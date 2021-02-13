@@ -29,7 +29,7 @@ export class RegisterFormComponent implements OnInit {
       username: [null, Validators.required, Validators.maxLength(12)],
       password: [null, Validators.required],
       confirmPassword: [null, Validators.required]
-    }
+    };
   }
 
   get f() {

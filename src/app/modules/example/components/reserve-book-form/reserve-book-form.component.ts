@@ -31,11 +31,11 @@ export class ReserveBookFormComponent implements OnInit {
       ]),
     }, [
       ReserveValidators.emailMatchValidator
-    ])
+    ]);
   }
 
   get firstName() {
-    return this.reserveForm.get('firstName')
+    return this.reserveForm.get('firstName');
   }
 
   get f() {
