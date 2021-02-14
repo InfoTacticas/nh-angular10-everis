@@ -1,1 +1,7 @@
-<p>book-short works!</p>
+<img [src] = "book.image" width="100%" height="auto">
+<p class="book-title">
+    <a [routerLink] = "['/books', book.id]"> {{ book.name }} </a>
+</p>
+<p class="book-publisher">
+    {{ book.publisher }}
+</p>
